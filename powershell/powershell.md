@@ -68,4 +68,14 @@ Set-NetFirewallProfile -All -Enabled True
 Remove-NetFirewallRule -DisplayName 'mysql'
 
 New-NetFirewallRule -DisplayName 'mysql' -Direction Inbound -Action Allow -Protocol TCP -LocalPort 3306 -RemoteAddress "10.147.18.200-10.147.18.254"
+
+# 关闭防火墙
+Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
+
+# WSL
+New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthernet (WSL)" -Action Allow
+
+# Remote Desktop
+New-NetFirewallRule -DisplayName "RDP" -Direction Inbound -Action Allow -Protocol TCP -LocalPort 3391 -Profile Any
+
 ```
