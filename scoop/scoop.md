@@ -52,4 +52,7 @@ scoop install postman
 # https://github.com/c0re100/qBittorrent-Enhanced-Edition
 scoop bucket add dorado https://github.com/chawyehsu/dorado
 scoop install qbittorrent-enhanced
+
+scoop bucket add nerd-fonts
+scoop install SarasaGothic
 ```
