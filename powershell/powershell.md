@@ -79,3 +79,29 @@ New-NetFirewallRule -DisplayName "WSL" -Direction Inbound -InterfaceAlias "vEthe
 New-NetFirewallRule -DisplayName "RDP" -Direction Inbound -Action Allow -Protocol TCP -LocalPort 3391 -Profile Any
 
 ```
+
+## 美化
+
+<https://github.com/JanDeDobbeleer/oh-my-posh>
+
+<https://github.com/dahlbyk/posh-git>
+
+<https://github.com/mbadolato/iTerm2-Color-Schemes#windows-terminal-color-schemes>
+
+<https://terminalsplash.com/>
+
+```powershell
+Install-Module oh-my-posh -Scope CurrentUser
+
+Get-PoshThemes
+
+Set-PoshPrompt -Theme robbyrussel
+
+Install-Module posh-git -Scope CurrentUser
+
+# 配置文件
+code $PROFILE
+Import-Module oh-my-posh
+Import-Module posh-git
+Set-PoshPrompt -Theme robbyrussel
+```
